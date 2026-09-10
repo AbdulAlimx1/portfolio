@@ -68,6 +68,14 @@ body {
   border-radius: 4px;
 }
 
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none !important;
+  outline-offset: 0;
+  box-shadow: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;

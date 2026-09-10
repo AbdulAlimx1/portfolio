@@ -3780,7 +3780,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <form ref={formRef} onSubmit={handleContactSubmit} className="space-y-4">
+                <form ref={formRef} onSubmit={handleContactSubmit} className="contact-form space-y-4">
                   <motion.div variants={formFieldsContainerVariants} className="space-y-4">
                     <div className="grid gap-4 sm:grid-cols-2">
                     <label className="grid gap-1.5">
@@ -3792,7 +3792,7 @@ export default function App() {
                           required
                           name="from_name"
                           placeholder="John Doe"
-                          className="w-full rounded-xl border border-white/10 bg-white/[0.06] pl-11 py-2.5 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-400 focus:border-violet-400/70 focus:bg-white/[0.08] focus:ring-4 focus:ring-violet-500/20"
+                          className="w-full rounded-xl border border-white/10 bg-white/[0.06] pl-11 py-2.5 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-400 focus:border-violet-400/70 focus:bg-white/[0.08] focus-visible:outline-none"
                         />
                         <div className="absolute left-3 top-1/2 -translate-y-1/2 flex h-6 w-6 items-center justify-center rounded bg-white/5 text-slate-400 text-[12px] font-bold">A</div>
                       </div>
@@ -3807,7 +3807,7 @@ export default function App() {
                           type="email"
                           name="reply_to"
                           placeholder="john@example.com"
-                          className="w-full rounded-xl border border-white/10 bg-white/[0.06] pl-11 py-2.5 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-400 focus:border-violet-400/70 focus:bg-white/[0.08] focus:ring-4 focus:ring-violet-500/20"
+                          className="w-full rounded-xl border border-white/10 bg-white/[0.06] pl-11 py-2.5 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-400 focus:border-violet-400/70 focus:bg-white/[0.08] focus-visible:outline-none"
                         />
                         <div className="absolute left-3 top-1/2 -translate-y-1/2 flex h-6 w-6 items-center justify-center rounded text-slate-400">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -3824,7 +3824,7 @@ export default function App() {
                       <input
                         name="phone"
                         placeholder="01XXXXXXXXX"
-                        className="w-full rounded-xl border border-white/10 bg-white/[0.06] pl-11 py-2.5 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-400 focus:border-violet-400/70 focus:bg-white/[0.08] focus:ring-4 focus:ring-violet-500/20"
+                        className="w-full rounded-xl border border-white/10 bg-white/[0.06] pl-11 py-2.5 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-400 focus:border-violet-400/70 focus:bg-white/[0.08] focus-visible:outline-none"
                       />
                       <div className="absolute left-3 top-1/2 -translate-y-1/2 flex h-6 w-6 items-center justify-center rounded text-slate-400">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6.16-6.16 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -3842,7 +3842,7 @@ export default function App() {
                           required
                           name="subject"
                           placeholder="Project Inquiry"
-                          className="w-full rounded-xl border border-white/10 bg-white/[0.06] pl-11 py-2.5 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-400 focus:border-violet-400/70 focus:bg-white/[0.08] focus:ring-4 focus:ring-violet-500/20"
+                          className="w-full rounded-xl border border-white/10 bg-white/[0.06] pl-11 py-2.5 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-400 focus:border-violet-400/70 focus:bg-white/[0.08] focus-visible:outline-none"
                         />
                         <div className="absolute left-3 top-1/2 -translate-y-1/2 flex h-6 w-6 items-center justify-center rounded text-slate-400">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg>
@@ -3858,7 +3858,7 @@ export default function App() {
                           required
                           name="project_type"
                           defaultValue=""
-                          className="w-full rounded-xl border border-white/10 bg-white/[0.06] pl-11 py-2.5 pr-4 text-sm text-slate-100 outline-none transition focus:border-violet-400/70 focus:bg-white/[0.08] focus:ring-4 focus:ring-violet-500/20"
+                          className="w-full rounded-xl border border-white/10 bg-white/[0.06] pl-11 py-2.5 pr-4 text-sm text-slate-100 outline-none transition focus:border-violet-400/70 focus:bg-white/[0.08] focus-visible:outline-none"
                           style={{
                             backgroundImage: 'url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23a1a1aa%22 stroke-width=%222%22%3e%3cpath d=%22M8 9l4-4 4 4M8 15l4 4 4-4%22/%3e%3c/svg%3e")',
                             backgroundRepeat: 'no-repeat',
@@ -3892,7 +3892,7 @@ export default function App() {
                         name="message"
                         rows={5}
                         placeholder={lang === "bn" ? "আপনার প্রজেক্ট, লক্ষ্য ও সময়সীমা বলুন..." : "Tell me about your project, goals, and timeline..."}
-                        className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.06] pl-11 py-2.5 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-400 focus:border-violet-400/70 focus:bg-white/[0.08] focus:ring-4 focus:ring-violet-500/20"
+                        className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.06] pl-11 py-2.5 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-400 focus:border-violet-400/70 focus:bg-white/[0.08] focus-visible:outline-none"
                       />
                       <div className="pointer-events-none absolute left-3 top-3 flex h-6 w-6 items-center justify-center rounded text-slate-400">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
