@@ -1,0 +1,14 @@
+const fs = require('fs');
+const path = 'c:/Users/User/OneDrive/Desktop/portfolio-website-development (1)/src/App.tsx';
+let data = fs.readFileSync(path, 'utf8');
+const oldCard = 'className="relative overflow-hidden rounded-[28px] border border-zinc-200 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:border-zinc-800 dark:bg-zinc-900"';
+const newCard = 'className="relative overflow-hidden rounded-[28px] border border-zinc-800 bg-zinc-950 shadow-[0_18px_50px_rgba(15,23,42,0.28)] dark:border-zinc-800 dark:bg-zinc-950"';
+data = data.replace(oldCard, newCard);
+const oldField = 'className="rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-2.5 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-indigo-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-indigo-600 dark:focus:ring-indigo-900/30"';
+const newField = 'className="rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-2.5 text-sm text-zinc-100 outline-none transition placeholder:text-zinc-500 focus:border-violet-400 focus:bg-zinc-950 focus:ring-4 focus:ring-violet-500/20 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-violet-400 dark:focus:ring-violet-500/20"';
+data = data.split(oldField).join(newField);
+const oldButton = '"bg-gradient-to-r from-indigo-600 to-emerald-500 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(99,102,241,0.35)]"';
+const newButton = '"bg-gradient-to-r from-violet-600 to-cyan-500 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(124,58,237,0.35)]"';
+data = data.replace(oldButton, newButton);
+fs.writeFileSync(path, data, 'utf8');
+console.log('Updated contact form color palette.');
