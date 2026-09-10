@@ -4,23 +4,22 @@ import { sendForm } from "@emailjs/browser";
 import Lenis from "lenis";
 
 // ★ ফাইলের একদম উপরে এই imports যোগ করুন (অন্যান্য import-এর পরে)
-import PCV from "./Asset/Image/PCV.png";
-import Chackout from "./Asset/Image/Chackout.png";
-import MobielV from "./Asset/Image/MobielV.png";
-import CocoahavenLogo from "./Asset/Image/CocoahavenLogo.png";
-import PoshakerBazarLogo from "./Asset/Image/poshakerbazarlogo.jpg";
-import PoshakerBazarWebsite from "./Asset/Image/poshakerbazarwebsite.png";
-import Poshingle from "./Asset/Image/poshingel.png";
-import SinglePage from "./Asset/Image/singelpage.png";
-import CartPage from "./Asset/Image/CartPage.png";
-import CheckOutPage from "./Asset/Image/ChackOutPage.png";
-import ThankYouPage from "./Asset/Image/ThankYouPage.png";
-import ShoppImage from "./Asset/Image/Shopp.png";
-import Poshaker from "./Asset/Image/poshaker.png";
-import dealImage from "./Asset/Image/deal.png";
-import WordPressLogo from "./Asset/Image/wordpress-logo.png";
-import AbdulAlim from "./Asset/Image/AbdulAlim.png";
-import AbdulAlimMir from "./Asset/Image/AbdulAlimMir.png";
+import PCV from "./Asset/Photos/PCV.webp";
+import MobielV from "./Asset/Photos/MobielV.webp";
+import CocoahavenLogo from "./Asset/Photos/CocoahavenLogo.webp";
+import PoshakerBazarLogo from "./Asset/Photos/poshakerbazarlogo.webp";
+import PoshakerBazarWebsite from "./Asset/Photos/poshakerbazarwebsite.webp";
+import Poshingle from "./Asset/Photos/poshingel.webp";
+import SinglePage from "./Asset/Photos/singelpage.webp";
+import CartPage from "./Asset/Photos/CartPage.webp";
+import CheckOutPage from "./Asset/Photos/ChackOutPage.webp";
+import ThankYouPage from "./Asset/Photos/ThankYouPage.webp";
+import ShoppImage from "./Asset/Photos/Shopp.webp";
+import Poshaker from "./Asset/Photos/poshaker.webp";
+import dealImage from "./Asset/Photos/deal.webp";
+import WordPressLogo from "./Asset/Photos/wordpress-logo.webp";
+import AbdulAlim from "./Asset/Photos/AbdulAlim.webp";
+import AbdulAlimMir from "./Asset/Photos/AbdulAlimMir.webp";
 
 /* ───────────────────────── TYPES ───────────────────────── */
 type Project = {
