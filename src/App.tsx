@@ -1222,13 +1222,13 @@ export default function App() {
       {/* HEADER */}
       <header className="sticky top-0 z-[120] border-b border-white/10 glass">
         <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href="#home" className="group inline-flex items-center gap-3">
-            <div className="relative h-11 w-11 overflow-hidden rounded-xl bg-transparent p-0">
+          <a href="#home" className="group inline-flex items-center gap-2 sm:gap-3">
+            <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-transparent p-0 sm:h-11 sm:w-11">
               <img src={AbdulAlimOfficialLogo} alt="Abdul Alim official logo" className="h-full w-full object-cover" />
             </div>
             <div className="leading-tight">
-              <div className="font-serif text-[17px] font-semibold tracking-tight text-white">Abdul ALim</div>
-              <div className="text-[11px] uppercase tracking-widest text-zinc-500">Web Developer & AI Automation Expert</div>
+              <div className="font-serif text-[13px] font-semibold tracking-tight text-white sm:text-[17px]">Abdul ALim</div>
+              <div className="text-[8px] uppercase tracking-[0.18em] text-zinc-500 sm:text-[11px]">Web Developer & AI Automation Expert</div>
             </div>
           </a>
           <nav className="hidden items-center gap-1 md:flex">{navItems.map(item => (<a key={item.id} href={`#${item.id}`} className={cx("group relative rounded-full px-3.5 py-2 text-sm transition", active === item.id ? "text-white" : "text-zinc-400 hover:text-white")}>{active === item.id && <motion.span layoutId="nav-pill" className="absolute inset-0 -z-10 rounded-full border border-white/10 bg-white/[0.06]" transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }} />}<span className="relative">{lang === "bn" ? item.labelBn : item.labelEn}<span className={cx("pointer-events-none absolute -bottom-0.5 left-1/2 h-px w-0 -translate-x-1/2 bg-gradient-to-r from-cyan-400 to-violet-400 transition-all duration-300 group-hover:w-full", active === item.id && "w-0")} /></span></a>))}</nav>
