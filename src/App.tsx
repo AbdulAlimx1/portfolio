@@ -1298,7 +1298,7 @@ export default function App() {
               {lang === "bn" ? "প্রজেক্টের জন্য উন্মুক্ত" : "Available for projects"}
             </motion.div>
             <motion.h1 initial={{ y: 28, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, ease: "easeOut", delay: 0.6 }} className="font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[4.75rem]">
-              {lang === "bn" ? <>হ্যালো, আমি <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-500 bg-clip-text text-transparent">Abdul ALim</span></> : <>Hello, I'm <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-500 bg-clip-text text-transparent">Abdul ALim</span></>}
+              <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-500 bg-clip-text text-transparent">Abdul Alim</span>
             </motion.h1>
             <motion.h2 initial={{ y: 28, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, ease: "easeOut", delay: 0.75 }} className="max-w-xl text-xl font-medium tracking-tight text-slate-300 sm:text-2xl">
               {lang === "bn" ? "ওয়েব ডেভেলপার & AI অটোমেশন এক্সপার্ট" : "Web Developer & AI Automation Expert"}
@@ -1350,41 +1350,6 @@ export default function App() {
               </div>
             </motion.div>
 
-            <motion.div initial={{ y: 40, opacity: 0, rotate: 12, filter: "blur(14px)" }} animate={{ y: [0, -8, 0], opacity: 1, rotate: 0, filter: "blur(0px)" }} transition={{ duration: 0.85, ease: "easeOut", delay: 1.5, y: { duration: 2.5, repeat: Infinity, ease: "easeInOut" } }} className="absolute right-2 top-4 z-20 max-w-[180px] rounded-3xl border border-white/10 bg-slate-900/95 px-3 py-2.5 shadow-[0_22px_60px_rgba(15,23,42,0.45)] backdrop-blur-xl sm:-right-4 sm:top-6 sm:px-4 sm:py-3">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-800 ring-1 ring-cyan-400/30">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-cyan-300"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-white">WordPress Expert</div>
-                  <div className="text-[11px] text-slate-400">Modern CMS craft</div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div initial={{ y: 42, opacity: 0, rotate: -10, filter: "blur(16px)" }} animate={{ y: [0, -8, 0], opacity: 1, rotate: 0, filter: "blur(0px)" }} transition={{ duration: 0.85, ease: "easeOut", delay: 1.65, y: { duration: 2.5, repeat: Infinity, ease: "easeInOut" } }} className="absolute left-2 top-[52%] z-20 max-w-[180px] -translate-y-1/2 rounded-3xl border border-white/10 bg-slate-900/95 px-3 py-2.5 shadow-[0_22px_60px_rgba(15,23,42,0.45)] backdrop-blur-xl sm:-left-8 sm:px-4 sm:py-3">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-800 ring-1 ring-cyan-400/30">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-emerald-300"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg>
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-white">AI Automation</div>
-                  <div className="text-[11px] text-slate-400">n8n & AI agency</div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div initial={{ y: 44, opacity: 0, rotate: 10, filter: "blur(16px)" }} animate={{ y: [0, -8, 0], opacity: 1, rotate: 0, filter: "blur(0px)" }} transition={{ duration: 0.85, ease: "easeOut", delay: 1.8, y: { duration: 2.5, repeat: Infinity, ease: "easeInOut" } }} className="absolute right-2 bottom-4 z-20 max-w-[180px] rounded-3xl border border-white/10 bg-slate-900/95 px-3 py-2.5 shadow-[0_22px_60px_rgba(15,23,42,0.45)] backdrop-blur-xl sm:-right-4 sm:bottom-8 sm:px-4 sm:py-3">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-800 ring-1 ring-amber-300/30">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" className="text-amber-300"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-white">5/5 Rating</div>
-                  <div className="text-[11px] text-slate-400">Client Satisfaction</div>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </motion.section>
@@ -3276,7 +3241,6 @@ export default function App() {
             <div className="order-first lg:order-last">
               {/* Heading */}
               <h2 className="mt-6 font-serif text-3xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[68px]">
-                {lang === "bn" ? "হ্যালো, আমি" : "I'm"}{" "}
                 <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
                   Abdul Alim
                 </span>
