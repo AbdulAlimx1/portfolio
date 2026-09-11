@@ -1223,7 +1223,7 @@ export default function App() {
       <header className="sticky top-0 z-[120] border-b border-white/10 glass">
         <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-8">
           <a href="#home" className="group inline-flex items-center gap-3">
-            <div className="relative h-11 w-11 overflow-hidden rounded-xl border border-white/10 bg-white/5">
+            <div className="relative h-11 w-11 overflow-hidden rounded-xl bg-transparent p-0">
               <img src={AbdulAlimOfficialLogo} alt="Abdul Alim official logo" className="h-full w-full object-cover" />
             </div>
             <div className="leading-tight">
