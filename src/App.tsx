@@ -4841,12 +4841,12 @@ export default function App() {
 
       {selectedServiceModal && (
         <div
-          className="fixed inset-0 z-[130] grid place-items-center bg-black/70 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-[130] flex items-start justify-center overflow-y-auto bg-black/70 p-3 backdrop-blur-sm sm:items-center sm:p-4"
           onClick={() => setSelectedServiceModal(null)}
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-2xl overflow-hidden rounded-[28px] border border-zinc-200 bg-white shadow-[0_30px_100px_rgba(0,0,0,0.35)] dark:border-zinc-800 dark:bg-zinc-950"
+            className="relative my-3 max-h-[calc(100dvh-1.5rem)] w-full max-w-2xl overflow-y-auto overscroll-contain rounded-[28px] border border-zinc-200 bg-white shadow-[0_30px_100px_rgba(0,0,0,0.35)] dark:border-zinc-800 dark:bg-zinc-950 sm:my-4 sm:max-h-[calc(100dvh-2rem)]"
           >
             <button
               onClick={() => setSelectedServiceModal(null)}
