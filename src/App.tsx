@@ -20,6 +20,8 @@ import dealImage from "./Asset/Photos/deal.webp";
 import WordPressLogo from "./Asset/Photos/wordpress-logo.webp";
 import AbdulAlim from "./Asset/Photos/AbdulAlim.webp";
 import AbdulAlimMir from "./Asset/Photos/AbdulAlimMir.webp";
+import AbdulAlimOfficialLogo from "./Asset/Photos/Abdul Alim Logo Official.png";
+import FaviconImage from "./Asset/Photos/Favicon.png";
 
 /* ───────────────────────── TYPES ───────────────────────── */
 type Project = {
@@ -1221,8 +1223,8 @@ export default function App() {
       <header className="sticky top-0 z-[120] border-b border-white/10 glass">
         <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-8">
           <a href="#home" className="group inline-flex items-center gap-3">
-            <div className="relative h-9 w-9 overflow-hidden rounded-xl border border-white/10" style={{ background: "var(--grad-aurora)" }}>
-              <div className="absolute inset-[1.5px] grid place-items-center rounded-[10px] bg-[#04050a] font-mono text-[11px] font-bold text-white">AA</div>
+            <div className="relative h-9 w-9 overflow-hidden rounded-xl border border-white/10 bg-white/5">
+              <img src={AbdulAlimOfficialLogo} alt="Abdul Alim official logo" className="h-full w-full object-cover" />
             </div>
             <div className="leading-tight">
               <div className="font-serif text-[17px] font-semibold tracking-tight text-white">Abdul ALim</div>
@@ -1298,7 +1300,7 @@ export default function App() {
               {lang === "bn" ? "প্রজেক্টের জন্য উন্মুক্ত" : "Available for projects"}
             </motion.div>
             <motion.h1 initial={{ y: 28, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, ease: "easeOut", delay: 0.6 }} className="font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[4.75rem]">
-              <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-500 bg-clip-text text-transparent">Abdul Alim</span>
+              {lang === "bn" ? <>হ্যালো, আমি <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-500 bg-clip-text text-transparent">Abdul Alim</span></> : <>Hello, I'm <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-500 bg-clip-text text-transparent">Abdul Alim</span></>}
             </motion.h1>
             <motion.h2 initial={{ y: 28, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, ease: "easeOut", delay: 0.75 }} className="max-w-xl text-xl font-medium tracking-tight text-slate-300 sm:text-2xl">
               {lang === "bn" ? "ওয়েব ডেভেলপার & AI অটোমেশন এক্সপার্ট" : "Web Developer & AI Automation Expert"}
@@ -4155,10 +4157,8 @@ export default function App() {
             {/* 1) Brand block */}
             <div className="order-1 lg:order-none">
               <a href="#home" className="inline-flex items-center gap-3">
-                <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-white">
-                  <div className="absolute inset-0 grid place-items-center font-mono text-[12px] font-bold text-zinc-900">
-                    AA
-                  </div>
+                <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10">
+                  <img src={AbdulAlimOfficialLogo} alt="Abdul Alim official logo" className="h-full w-full object-cover" />
                 </div>
                 <div className="leading-tight">
                   <div className="font-serif text-[17px] font-semibold tracking-tight text-white">
