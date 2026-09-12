@@ -1223,8 +1223,8 @@ export default function App() {
       <header className="sticky top-0 z-[120] border-b border-white/10 glass">
         <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-8">
           <a href="#home" className="group inline-flex items-center gap-2 sm:gap-3">
-            <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-transparent p-0 sm:h-11 sm:w-11">
-              <img src={AbdulAlimOfficialLogo} alt="Abdul Alim official logo" className="h-full w-full object-cover" />
+            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-transparent p-0 sm:h-12 sm:w-12">
+              <img src={AbdulAlimOfficialLogo} alt="Abdul Alim official logo" className="h-full w-full object-contain" />
             </div>
             <div className="leading-tight">
               <div className="font-serif text-[13px] font-semibold tracking-tight text-white sm:text-[17px]">Abdul ALim</div>
@@ -4810,7 +4810,7 @@ export default function App() {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative my-3 max-h-[calc(100dvh-1.5rem)] w-full max-w-2xl overflow-y-auto overscroll-contain rounded-[28px] border border-zinc-200 bg-white shadow-[0_30px_100px_rgba(0,0,0,0.35)] dark:border-zinc-800 dark:bg-zinc-950 sm:my-4 sm:max-h-[calc(100dvh-2rem)]"
+            className="relative my-3 flex max-h-[calc(100dvh-1.5rem)] w-full max-w-2xl flex-col overflow-hidden rounded-[28px] border border-zinc-200 bg-white shadow-[0_30px_100px_rgba(0,0,0,0.35)] dark:border-zinc-800 dark:bg-zinc-950 sm:my-4 sm:max-h-[calc(100dvh-2rem)]"
           >
             <button
               onClick={() => setSelectedServiceModal(null)}
@@ -4821,7 +4821,7 @@ export default function App() {
                 <path d="M18 6 6 18M6 6l12 12" />
               </svg>
             </button>
-            <div className="p-6 sm:p-8">
+            <div className="min-h-0 overflow-y-auto overscroll-contain p-6 pt-16 sm:p-8 sm:pt-16" data-lenis-prevent>
               <h3 className="font-serif text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">
                 {selectedServiceModal.title}
               </h3>
