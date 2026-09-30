@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, useCallback, FormEvent } from "re
 import { motion, useInView, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { sendForm } from "@emailjs/browser";
 import Lenis from "lenis";
+import EcommerceServices from "./EcommerceServices";
 
 // ★ ফাইলের একদম উপরে এই imports যোগ করুন (অন্যান্য import-এর পরে)
 import PCV from "./Asset/Photos/PCV.webp";
@@ -383,31 +384,6 @@ const customCodingServices = [
   { id: "any-website", titleEn: "Any Type of Website", titleBn: "যেকোনো ধরনের ওয়েবসাইট", descEn: "Custom websites for any idea, industry, or business requirement, built around your goals.", descBn: "আপনার লক্ষ্য অনুযায়ী যেকোনো আইডিয়া, ইন্ডাস্ট্রি বা ব্যবসার জন্য কাস্টম ওয়েবসাইট।", icon: "globe", accent: "from-sky-500 to-cyan-600", accentLight: "bg-sky-50 text-sky-600 dark:bg-sky-950/40 dark:text-sky-400" },
   { id: "vibe-coding", titleEn: "Vibe Custom Coding Website", titleBn: "ভাইব কাস্টম কোডিং ওয়েবসাইট", descEn: "Modern, expressive websites made with custom code, creative interactions, and a distinct visual identity.", descBn: "কাস্টম কোড, ক্রিয়েটিভ ইন্টার‌্যাকশন ও আলাদা ভিজ্যুয়াল আইডেন্টিটিতে তৈরি আধুনিক ওয়েবসাইট।", icon: "code", accent: "from-orange-500 to-fuchsia-600", accentLight: "bg-orange-50 text-orange-600 dark:bg-orange-950/40 dark:text-orange-400" },
 ];
-
-const customCodingServiceModalData = {
-  "any-website": {
-    title: "Any Type of Website",
-    description: "Tell me your idea and I will turn it into a polished, responsive website designed around your audience and goals.",
-    points: [
-      "Custom structure for your business or idea",
-      "Responsive design for mobile, tablet, and desktop",
-      "Fast-loading, SEO-friendly foundation",
-      "Integrations and features tailored to your workflow",
-    ],
-    cta: "Discuss My Website",
-  },
-  "vibe-coding": {
-    title: "Vibe Custom Coding Website",
-    description: "Get a distinctive website built with custom code, creative motion, and a visual direction that feels uniquely yours.",
-    points: [
-      "Original design and interaction direction",
-      "Custom-coded sections and functionality",
-      "Smooth animations without sacrificing performance",
-      "Scalable foundation for future features",
-    ],
-    cta: "Build My Custom Site",
-  },
-} as const;
 
 /* ───────────────────────── FAQ DATA ───────────────────────── */
 const faqItems = [
@@ -1110,7 +1086,6 @@ export default function App() {
   }, [autoCyclePaused]);
   const currentServices = serviceTab === "wordpress" ? [...wordpressServices, ...customCodingServices] : automationServices;
   const visibleServices = currentServices.slice(0, isMobile && !showMoreServices ? 3 : currentServices.length);
-  const wordpressServiceModalData = {     ecommerce: {       title: "E-commerce Website",       description:         "Start selling online with confidence. We build easy-to-manage, secure, and fast-loading WooCommerce stores.",       points: [         "Complete Store Setup: Full-featured WooCommerce store with secure payment & shipping integration.",         "Marketing-Ready: Integrated Facebook Pixel, Google Tag Manager & Analytics for tracking.",         "Inventory & Automation: Automated invoice, inventory management, and abandoned cart recovery.",         "Speed & Conversion: High-performance optimization with a seamless custom checkout experience.",       ],       cta: "Build My Store",     },     business: {       title: "Business & Corporate Website",       description:         "Get a professional, modern, and fast-loading website for your company or agency that builds credibility and attracts new clients.",       points: [         "Clean, Professional, and Custom Design",         "Responsive & modern design",         "Clear Showcase of Services & Portfolio",         "Advance SEO Setup",         "Easy to update and manage",         "User-Friendly Content Management System",       ],       cta: "Establish My Brand",     },     blog: {       title: "Blog & News Websites",       description:         "I develop clean, reader-friendly, and easy-to-manage blog and news websites optimized for audience growth and better search engine ranking.",       points: [         "Simple admin panel",         "Newsletter Subscription Form",         "Super-Fast Loading Speed",         "Comment System (with Spam Protection)",         "Related Posts Suggestion",         "SEO-Friendly URL & Structure",         "Newsletter Subscription Form",       ],       cta: "Start Sharing Ideas",     },     portfolio: {       title: "Portfolio & Personal Websites",       description:         "Showcase your skills and work with a clean, modern personal or portfolio website designed to highlight your professional profile.",       points: [         "attractive, Creative & clean design",         "Project Showcase Gallery Management",         "Easy-to-Use Contact Form",         "Fully Responsive & Mobile-friendly",         "Smooth Scrolling & Animations",         "SEO-Friendly URL & Structure",       ],       cta: "Showcase My Work",     },     landing: {       title: "High-Converting Landing Pages",       description:         "Turn visitors into customers instantly. Get high-converting landing pages for your promotions and services that compel people to take action.",       points: [         "Single-Page, Single-Goal Focus",         "Compelling Headlines & Sales Copy",         "Fast loading & Mobile Optimized",         "Marketing-focused design",         "Lead Generation Form Integration",         "Integrated Contact/Lead Capture Form",       ],       cta: "Boost My Sales",     },     "custom-wp": {       title: "Custom WordPress Design (Elementor/Builder)",       description:         "Want a custom design that you can easily update yourself? I build fully customizable WordPress websites using Elementor, tailored to your exact needs.",       points: [         "Drag & Drop Custom Design with Elementor Pro",         "Unique & Custom Coding (if needed)",         "Design based on your unique idea",         "Advanced Functionality & Animations",         "Fully Editable and Manageable",         "Fully responsive",       ],       cta: "Get a Custom Quote",     },     maintenance: {       title: "Maintenance & Support",       description:         "I provide ongoing website maintenance and support to keep your site secure, updated, and running smoothly.",       points: [         "Regular content updates & page edits",         "New feature additions as your business grows",         "Security monitoring & malware protection",         "Speed optimization & plugin updates",         "Backup management & error fixing",         "Priority lifetime support for active clients",       ],       cta: "Secure My Site",     },   } as const;
     const serviceDetails = {
     ecommerce: {
       title: "E-commerce Website",
@@ -1209,7 +1184,35 @@ export default function App() {
       ],
       cta: "Secure My Site",
     },
-  } as const;
+  };
+
+  const wordpressServiceModalData = serviceDetails;
+  const customCodingServiceModalData = {
+    "any-website": {
+      title: "Any Type of Website",
+      description:
+        "Custom websites for any idea, industry, or business requirement, designed around your goals and audience.",
+      points: [
+        "A tailored structure for your business and content",
+        "Responsive design for mobile, tablet, and desktop",
+        "Performance, accessibility, and SEO fundamentals",
+        "Integrations and features selected for your requirements",
+      ],
+      cta: "Discuss My Website",
+    },
+    "vibe-coding": {
+      title: "Vibe Custom Coding Website",
+      description:
+        "Modern, expressive websites built with custom code, creative interactions, and a distinct visual identity.",
+      points: [
+        "Custom-coded layout and visual direction",
+        "Purposeful motion and interactive details",
+        "Responsive implementation across screen sizes",
+        "Fast, maintainable frontend code",
+      ],
+      cta: "Discuss a Custom Build",
+    },
+  };
 
   return (
     <>
@@ -1546,32 +1549,8 @@ export default function App() {
                 ? "কাস্টম ওয়েবসাইট, E-commerce, AI agent এবং automation workflow—সব কিছু এক জায়গায়।"
                 : "Custom websites, E-commerce, AI agents, and automation workflows — all in one place."}
             </p>
-            <div className="mt-6 overflow-hidden rounded-full border border-white/10 bg-white/10 py-2 shadow-inner shadow-cyan-500/10 backdrop-blur-xl">
-              <div className="marquee flex min-w-full whitespace-nowrap text-sm font-medium text-zinc-600 dark:text-zinc-300">
-                <div className="marquee-content inline-flex">
-                  <span className="mx-6">WordPress Development</span>
-                  <span className="mx-6">WooCommerce Stores</span>
-                  <span className="mx-6">Landing Pages</span>
-                  <span className="mx-6">Business Websites</span>
-                  <span className="mx-6">AI Agent Development</span>
-                  <span className="mx-6">n8n Automation Workflows</span>
-                  <span className="mx-6">Custom WordPress Design</span>
-                  <span className="mx-6">Maintenance & Support</span>
-                </div>
-                <div className="marquee-content inline-flex">
-                  <span className="mx-6">WordPress Development</span>
-                  <span className="mx-6">WooCommerce Stores</span>
-                  <span className="mx-6">Landing Pages</span>
-                  <span className="mx-6">Business Websites</span>
-                  <span className="mx-6">AI Agent Development</span>
-                  <span className="mx-6">n8n Automation Workflows</span>
-                  <span className="mx-6">Custom WordPress Design</span>
-                  <span className="mx-6">Maintenance & Support</span>
-                </div>
-              </div>
-            </div>
           </div>
-          <div className="mt-10 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <div className="relative inline-flex items-end gap-1">
               <button
                 onClick={() => {
@@ -1585,7 +1564,7 @@ export default function App() {
                     : "text-slate-400 hover:text-slate-300"
                 )}
               >
-                🌐 {lang === "bn" ? "ওয়েবসাইট" : "Website"}
+                🌐 Website
                 {serviceTab === "wordpress" && (
                   <motion.div
                     layoutId="serviceTabPointer"
@@ -1618,26 +1597,25 @@ export default function App() {
               <div className="absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-600/50 to-transparent" />
             </div>
           </div>
-          <div
-            className={cx(
-              "mt-8 grid grid-cols-1 gap-4",
-              serviceTab === "wordpress"
-                ? "sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-                : "sm:grid-cols-2 lg:grid-cols-3"
-            )}
-          >
-            {visibleServices.map((s, index) => (
+          {serviceTab === "wordpress" ? (
+            <EcommerceServices
+              lang={lang}
+              proofLogo={CocoahavenLogo}
+              proofHref="https://cocoahavenbd.com/"
+              onSelectOther={(id) => {
+                const modalData =
+                  wordpressServiceModalData[id as keyof typeof wordpressServiceModalData] ||
+                  customCodingServiceModalData[id as keyof typeof customCodingServiceModalData];
+                if (modalData) setSelectedServiceModal(modalData);
+              }}
+            />
+          ) : (
+            <>
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {visibleServices.map((s) => (
               <button
                 key={s.titleEn}
                 type="button"
-                onClick={() => {
-                  if (serviceTab === "wordpress") {
-                    const modalData = wordpressServiceModalData[s.id as keyof typeof wordpressServiceModalData] || customCodingServiceModalData[s.id as keyof typeof customCodingServiceModalData];
-                    if (modalData) {
-                      setSelectedServiceModal(modalData);
-                    }
-                  }
-                }}
                 className="group relative overflow-hidden rounded-[28px] border border-transparent bg-slate-950/75 p-6 text-left shadow-[0_30px_60px_-35px_rgba(15,23,42,0.85)] transition-all duration-300 hover:bg-slate-900/95 hover:shadow-[0_35px_70px_-30px_rgba(14,165,233,0.18)] cursor-pointer"
               >
                 <div className={cx("pointer-events-none absolute -inset-px rounded-[30px] bg-gradient-to-r opacity-80 blur-sm", s.accent)} />
@@ -1672,21 +1650,6 @@ export default function App() {
                   <p className="mt-3 text-[13px] leading-6 text-slate-300">
                     {lang === "bn" ? s.descBn : s.descEn}
                   </p>
-                  {serviceTab === "wordpress" && (
-                    <div className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 transition group-hover:text-white">
-                      <span>{lang === "bn" ? "বিস্তারিত" : "View Details"}</span>
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path d="M5 12h14M13 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  )}
                 </div>
               </button>
             ))}
@@ -1705,6 +1668,8 @@ export default function App() {
                 </svg>
               </button>
             </div>
+          )}
+            </>
           )}
 
           {/* PRICING DIVIDER */}
@@ -2283,7 +2248,7 @@ export default function App() {
   whileInView="visible"
   viewport={{ once: true, amount: 0.1 }}
   variants={workSectionVariants}
-  className="relative overflow-hidden border-y border-slate-800/80 bg-[#050816] py-20 text-white sm:py-32"
+  className="relative overflow-hidden border-y border-slate-800/80 bg-[#050816] pt-12 pb-20 text-white sm:pt-20 sm:pb-32"
 >
   {/* ═══ PREMIUM BACKGROUND SYSTEM ═══ */}
   <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
