@@ -3,8 +3,11 @@ import { motion, useInView, useScroll, useTransform, AnimatePresence } from "fra
 import { sendForm } from "@emailjs/browser";
 import Lenis from "lenis";
 import EcommerceServices from "./EcommerceServices";
+import SmartCheckoutGuardShowcase, { smartCheckoutCover } from "./SmartCheckoutGuardShowcase";
+import WhatsAppAgentShowcase, { whatsappAgentCover } from "./WhatsAppAgentShowcase";
+import AbandonedRecoveryShowcase, { abandonedRecoveryCover } from "./AbandonedRecoveryShowcase";
 
-// ★ ফাইলের একদম উপরে এই imports যোগ করুন (অন্যান্য import-এর পরে)
+import FinalWebVideo from "./Asset/Photos/FInal Vedio For Web.mp4";
 import PCV from "./Asset/Photos/PCV.webp";
 import MobielV from "./Asset/Photos/MobielV.webp";
 import CocoahavenLogo from "./Asset/Photos/CocoahavenLogo.webp";
@@ -138,6 +141,36 @@ const projects: Project[] = [
     },
   },
   {
+    id: "p6",
+    title: "SmartCheckout Guard",
+    slug: "smartcheckout-guard",
+    summary:
+      "A WooCommerce plugin I built to make store management easier for clients, bringing checkout protection, order recovery, courier tools and tracking into one place.",
+    description:
+      "I created SmartCheckout Guard to help clients manage their WooCommerce stores more easily. It brings multiple store-management features together in one plugin and dashboard.",
+    tags: ["WordPress", "WooCommerce", "PHP"],
+    cover: smartCheckoutCover,
+    gallery: [],
+    role: "Plugin Developer",
+    stack: ["WordPress", "WooCommerce", "PHP"],
+    year: 2026,
+    highlights: [
+      "Checkout protection and fake-order blocking",
+      "Incomplete-order recovery",
+      "Courier tools and order management",
+      "Meta Pixel and Conversions API tracking",
+    ],
+    type: "website",
+    category: "WordPress Plugin / WooCommerce",
+    status: "Completed",
+    review: {
+      clientName: "Abdul Alim",
+      clientRole: "Plugin Developer",
+      rating: 5,
+      text: "",
+    },
+  },
+  {
     id: "p3",
     title: "RAG Knowledge Agent",
     slug: "rag-agent",
@@ -173,43 +206,64 @@ const projects: Project[] = [
   },
   {
     id: "p4",
-    title: "E-commerce AI Chatbot",
-    slug: "ecom-chatbot",
+    title: "WhatsApp AI Agent",
+    slug: "whatsapp-ai-agent",
     summary:
-      "A smart WhatsApp & website chatbot for e-commerce stores that handles product queries, order tracking, and automated customer support 24/7.",
+      "A reusable AI agent for WhatsApp, Messenger and websites that answers customers 24/7 based on your own system prompt.",
     description:
-      "Developed an intelligent AI chatbot system for e-commerce businesses that operates across WhatsApp and website channels. The chatbot handles product recommendations, answers FAQs, tracks orders in real-time, processes return requests, and captures leads — all automatically. Built with n8n automation workflows, OpenAI for natural language understanding, and integrated directly with WooCommerce for live inventory and order data. The system reduced customer support tickets by 60% and increased after-hours conversions.",
-    tags: ["n8n", "OpenAI", "WhatsApp API", "WooCommerce"],
-    cover: "https://images.unsplash.com/photo-1531746790095-e5982b42ffee?q=80&w=2000&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?q=80&w=1600&auto=format",
-      "https://images.unsplash.com/photo-1611746872915-64382b5c76da?q=80&w=1600&auto=format",
-    ],
+      "A custom AI agent solution that can be set up for any business or website. It replies to customers instantly in the language and tone you define, remembers the recent conversation, follows your rules through a system prompt, and saves every chat to a dashboard for the owner. The same agent can run on WhatsApp, Facebook Messenger or as a chat widget on your website.",
+    tags: ["n8n", "WhatsApp Cloud API", "LLM Model API", "Google Sheets"],
+    cover: whatsappAgentCover,
+    gallery: [],
     role: "Automation & AI Developer",
-    stack: [
-      "n8n",
-      "OpenAI API",
-      "WhatsApp Business API",
-      "WooCommerce REST API",
-      "Supabase",
-      "Vercel",
-    ],
-    year: 2025,
+    stack: ["n8n", "WhatsApp Cloud API", "LLM Model API", "Google Sheets"],
+    year: 2026,
     highlights: [
-      "60% reduction in support tickets",
-      "24/7 automated customer support",
-      "Real-time order tracking integration",
-      "Smart product recommendations",
+      "Works for any business or website",
+      "Any language, set through the system prompt",
+      "Trainable with your own rules",
+      "Owner dashboard for all chats",
     ],
-    type: "website",
-    visible: false,
-    category: "AI Chatbot / E-commerce",
+    type: "automation",
+    visible: true,
+    category: "AI Automation / Chat Agent",
     status: "Completed",
     review: {
-      clientName: "QuickMart BD",
-      clientRole: "E-commerce Store",
+      clientName: "Any Business",
+      clientRole: "Custom-built per business",
       rating: 5,
-      text: "Our support costs dropped by more than half! The chatbot handles most queries perfectly — product info, order tracking, returns — everything. Customers love the instant responses, especially on WhatsApp. Game changer for our business!",
+      text: "",
+    },
+  },
+  {
+    id: "p5",
+    title: "Abandoned Checkout Auto-Recovery",
+    slug: "abandoned-checkout-recovery",
+    summary:
+      "An automatic recovery system for WooCommerce that saves incomplete checkouts and sends timed SMS messages to bring customers back.",
+    description:
+      "A custom WooCommerce automation that captures a customer's details while they fill the checkout form. If they leave without ordering, it automatically sends a reminder SMS after a set time and an optional discount SMS later, re-checks before every send, never messages the same customer twice, and stops as soon as the order is placed. The owner controls the gateway, timing and message templates from the dashboard.",
+    tags: ["WordPress", "WooCommerce", "PHP", "SMS Gateway API"],
+    cover: abandonedRecoveryCover,
+    gallery: [],
+    role: "Plugin Developer",
+    stack: ["WordPress", "WooCommerce", "PHP", "WP-Cron", "SMS Gateway API"],
+    year: 2026,
+    highlights: [
+      "Automatic reminder and discount SMS",
+      "Stops once the order is placed",
+      "Works with any SMS gateway",
+      "Telegram alert for repeat abandoners",
+    ],
+    type: "automation",
+    visible: true,
+    category: "WooCommerce Automation",
+    status: "Completed",
+    review: {
+      clientName: "WooCommerce Stores",
+      clientRole: "Built for online shops",
+      rating: 5,
+      text: "",
     },
   },
 ];
@@ -405,7 +459,6 @@ const navItems = [
   { id: "work", labelEn: "My Work", labelBn: "আমার কাজ" },
   { id: "about", labelEn: "About", labelBn: "আমার সম্পর্কে" },
   { id: "contact", labelEn: "Contact", labelBn: "যোগাযোগ" },
-  { id: "blog", labelEn: "Blog", labelBn: "ব্লগ" },
 ];
 
 function ServiceIcon({ name }: { name: string }) {
@@ -1251,7 +1304,6 @@ export default function App() {
               <div className="mx-auto max-w-[1200px] px-4 py-3">
                 <div className="grid grid-cols-2 gap-2">
                   {navItems.map(item => (
-
                     <a
                       key={item.id}
                       href={`#${item.id}`}
@@ -1604,17 +1656,19 @@ export default function App() {
             </div>
           </div>
           {serviceTab === "wordpress" ? (
-            <EcommerceServices
-              lang={lang}
-              proofLogo={CocoahavenLogo}
-              proofHref="https://cocoahavenbd.com/"
-              onSelectOther={(id) => {
-                const modalData =
-                  wordpressServiceModalData[id as keyof typeof wordpressServiceModalData] ||
-                  customCodingServiceModalData[id as keyof typeof customCodingServiceModalData];
-                if (modalData) setSelectedServiceModal(modalData);
-              }}
-            />
+            <>
+              <EcommerceServices
+                lang={lang}
+                proofLogo={CocoahavenLogo}
+                proofHref="https://cocoahavenbd.com/"
+                onSelectOther={(id) => {
+                  const modalData =
+                    wordpressServiceModalData[id as keyof typeof wordpressServiceModalData] ||
+                    customCodingServiceModalData[id as keyof typeof customCodingServiceModalData];
+                  if (modalData) setSelectedServiceModal(modalData);
+                }}
+              />
+            </>
           ) : (
             <>
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -4640,67 +4694,79 @@ export default function App() {
             </div>
 
             {/* Client Review */}
-            <div className="border-t border-zinc-200 bg-zinc-50/80 px-5 py-6 dark:border-zinc-800 dark:bg-zinc-900/50 sm:px-6">
-              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">
-                {lang === "bn" ? "ক্লায়েন্ট রিভিউ" : "Client Review"}
-              </div>
-              <div className="mt-4 rounded-3xl border border-zinc-200 bg-white/90 p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-950/80">
-                <div className="flex items-center gap-3">
-                  {selected.logo ? (
-                    <img
-                      loading="eager"
-                      decoding="async"
-                      src={selected.logo}
-                      alt=""
-                      className="h-12 w-12 rounded-full border border-zinc-200 object-cover dark:border-zinc-700"
-                    />
-                  ) : (
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-emerald-500 text-sm font-bold text-white">
-                      {selected.review.clientName.charAt(0)}
-                    </div>
-                  )}
-                  <div>
-                    <div className="text-sm font-semibold text-zinc-900 dark:text-white">
-                      {selected.review.clientName}
-                    </div>
-                    <div className="text-[12px] text-emerald-600 dark:text-emerald-400">
-                      {selected.review.clientRole}
+            {selected.review.text && (
+              <div className="border-t border-zinc-200 bg-zinc-50/80 px-5 py-6 dark:border-zinc-800 dark:bg-zinc-900/50 sm:px-6">
+                <div className="text-sm font-semibold uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">
+                  {lang === "bn" ? "ক্লায়েন্ট রিভিউ" : "Client Review"}
+                </div>
+                <div className="mt-4 rounded-3xl border border-zinc-200 bg-white/90 p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-950/80">
+                  <div className="flex items-center gap-3">
+                    {selected.logo ? (
+                      <img
+                        loading="eager"
+                        decoding="async"
+                        src={selected.logo}
+                        alt=""
+                        className="h-12 w-12 rounded-full border border-zinc-200 object-cover dark:border-zinc-700"
+                      />
+                    ) : (
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-emerald-500 text-sm font-bold text-white">
+                        {selected.review.clientName.charAt(0)}
+                      </div>
+                    )}
+                    <div>
+                      <div className="text-sm font-semibold text-zinc-900 dark:text-white">
+                        {selected.review.clientName}
+                      </div>
+                      <div className="text-[12px] text-emerald-600 dark:text-emerald-400">
+                        {selected.review.clientRole}
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div className="mt-4 flex gap-1">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <svg
+                      key={i}
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill={i < selected.review.rating ? "currentColor" : "none"}
+                      stroke="currentColor"
+                      strokeWidth={i < selected.review.rating ? 0 : 2}
+                      className={
+                        i < selected.review.rating
+                          ? "text-amber-500"
+                          : "text-zinc-300 dark:text-zinc-600"
+                      }
+                    >
+                      <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                  ))}
+                </div>
+                <div className="mt-4 rounded-3xl border border-zinc-200 bg-white/95 px-4 py-4 text-zinc-700 shadow-sm dark:border-zinc-700 dark:bg-zinc-950/80 dark:text-zinc-300">
+                  <div className="text-4xl leading-none text-amber-500">“</div>
+                  <p className="mt-1 text-[15px] leading-7 text-zinc-700 dark:text-zinc-300">
+                    {selected.review.text}
+                  </p>
+                  <div className="mt-2 text-right text-4xl leading-none text-amber-500">”</div>
+                </div>
               </div>
-              <div className="mt-4 flex gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <svg
-                    key={i}
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill={i < selected.review.rating ? "currentColor" : "none"}
-                    stroke="currentColor"
-                    strokeWidth={i < selected.review.rating ? 0 : 2}
-                    className={
-                      i < selected.review.rating
-                        ? "text-amber-500"
-                        : "text-zinc-300 dark:text-zinc-600"
-                    }
-                  >
-                    <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>
-                ))}
-              </div>
-              <div className="mt-4 rounded-3xl border border-zinc-200 bg-white/95 px-4 py-4 text-zinc-700 shadow-sm dark:border-zinc-700 dark:bg-zinc-950/80 dark:text-zinc-300">
-                <div className="text-4xl leading-none text-amber-500">“</div>
-                <p className="mt-1 text-[15px] leading-7 text-zinc-700 dark:text-zinc-300">
-                  {selected.review.text}
-                </p>
-                <div className="mt-2 text-right text-4xl leading-none text-amber-500">”</div>
-              </div>
-            </div>
+            )}
           </div>
         </div>
 
-        {/* Client Review removed (duplicate) */}
+        {selected.slug === "smartcheckout-guard" && (
+          <SmartCheckoutGuardShowcase lang={lang} />
+        )}
+
+        {selected.slug === "whatsapp-ai-agent" && (
+          <WhatsAppAgentShowcase lang={lang} videoSrc={FinalWebVideo} />
+        )}
+
+        {selected.slug === "abandoned-checkout-recovery" && (
+          <AbandonedRecoveryShowcase lang={lang} />
+        )}
 
         {/* ── Gallery ── */}
         {selected.gallery.length > 0 && (
