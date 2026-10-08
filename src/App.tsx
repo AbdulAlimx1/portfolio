@@ -7,6 +7,7 @@ import WhatsAppAgentShowcase, { whatsappAgentCover } from "./WhatsAppAgentShowca
 import SmartCheckoutShowcase, { smartCheckoutCover } from "./SmartCheckoutGuardShowcase";
 
 import WhatsAppAgentReviewVideo from "./Asset/Photos/WA AI Agent Review Vedio.mp4";
+import SmartCheckoutGuardVideo from "./Asset/Photos/smart Chackout Gurd vedio.mp4";
 import PCV from "./Asset/Photos/PCV.webp";
 import MobielV from "./Asset/Photos/MobielV.webp";
 import CocoahavenLogo from "./Asset/Photos/CocoahavenLogo.webp";
@@ -4702,7 +4703,7 @@ export default function App() {
           <WhatsAppAgentShowcase lang={lang} videoSrc={WhatsAppAgentReviewVideo} />
         )}
         {selected.slug === "smart-checkout-guard" && (
-          <SmartCheckoutShowcase lang={lang} />
+          <SmartCheckoutShowcase lang={lang} videoSrc={SmartCheckoutGuardVideo} />
         )}
 
         {/* ── Gallery ── */}
