@@ -9,14 +9,16 @@ import PCV from "./Asset/Photos/PCV.webp";
 import MobielV from "./Asset/Photos/MobielV.webp";
 import CocoahavenLogo from "./Asset/Photos/CocoahavenLogo.webp";
 import PoshakerBazarLogo from "./Asset/Photos/poshakerbazarlogo.webp";
-import PoshakerBazarWebsite from "./Asset/Photos/poshakerbazarwebsite.webp";
-import Poshingle from "./Asset/Photos/poshingel.webp";
+import PoshakerBazarHome from "./Asset/Photos/Poshaker bazar home.png";
+import PoshakerBazarCart from "./Asset/Photos/PBcart Popup.png";
+import PoshakerBazarCheckout from "./Asset/Photos/PB ChackOut.png";
+import PoshakerBazarProduct from "./Asset/Photos/PB Singel ProdPage.png";
+import PoshakerBazarThankYou from "./Asset/Photos/PB Thank You Page.png";
 import SinglePage from "./Asset/Photos/singelpage.webp";
 import CartPage from "./Asset/Photos/CartPage.webp";
 import CheckOutPage from "./Asset/Photos/ChackOutPage.webp";
 import ThankYouPage from "./Asset/Photos/ThankYouPage.webp";
 import ShoppImage from "./Asset/Photos/Shopp.webp";
-import Poshaker from "./Asset/Photos/poshaker.webp";
 import dealImage from "./Asset/Photos/deal.webp";
 import WordPressLogo from "./Asset/Photos/wordpress-logo.webp";
 import AbdulAlim from "./Asset/Photos/AbdulAlim.webp";
@@ -110,8 +112,8 @@ const projects: Project[] = [
     description:
       "Poshaker Bazar is an online fashion and clothing e-commerce brand.",
     tags: ["WordPress CMS"],
-    cover: PoshakerBazarWebsite,
-    gallery: [Poshingle, Poshaker],
+    cover: PoshakerBazarHome,
+    gallery: [PoshakerBazarProduct, PoshakerBazarCart, PoshakerBazarCheckout, PoshakerBazarThankYou],
     href: "https://poshakerbazar.com/",
     role: "Designer & Developer",
     stack: ["WordPress"],
@@ -125,7 +127,7 @@ const projects: Project[] = [
     ],
     type: "website",
     logo: PoshakerBazarLogo,
-    visible: false,
+    visible: true,
     category: "E-commerce / Fashion",
     status: "Completed",
     review: {
@@ -646,6 +648,7 @@ function MagneticButton({ children, className = "" }: { children: React.ReactNod
 
 export default function App() {
   useTheme();
+  const showImpactStats = false;
   const [introDone, setIntroDone] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -1326,13 +1329,16 @@ export default function App() {
                 </span>
               </a>
             </motion.div>
-            <motion.div initial={{ y: 28, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, ease: "easeOut", delay: 1.25 }} className="mt-0 sm:mt-8 flex items-center gap-4 text-xs text-slate-400">
-              <div className="flex items-center">
-                <div className="relative z-10 flex h-10 w-10 items-center justify-center overflow-hidden rounded-full transition-transform duration-300 hover:translate-y-[-2px]">
+            <motion.div initial={{ y: 28, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, ease: "easeOut", delay: 1.25 }} className="mt-0 sm:mt-8 flex items-center gap-3 text-xs text-slate-400">
+              <div className="flex items-center -space-x-3">
+                <div className="relative z-10 flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border-2 border-slate-950 transition-transform duration-300 hover:translate-y-[-2px]">
                   <img loading="eager" decoding="async" src={CocoahavenLogo} alt="Cocoa Haven Logo" className="h-full w-full object-cover" />
                 </div>
+                <div className="relative z-0 flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border-2 border-slate-950 transition-transform duration-300 hover:translate-y-[-2px]">
+                  <img loading="eager" decoding="async" src={PoshakerBazarLogo} alt="Poshaker Bazar Logo" className="h-full w-full object-cover" />
+                </div>
               </div>
-              <div><span className="font-semibold text-slate-100">1+ </span>{lang === "bn" ? "ক্লায়েন্ট • 5/5 রেটিং" : "clients • 5/5 rating"}</div>
+              <div><span className="font-semibold text-slate-100">2+ </span>{lang === "bn" ? "ক্লায়েন্ট • 5/5 রেটিং" : "clients • 5/5 rating"}</div>
             </motion.div>
           </div>
 
@@ -2363,10 +2369,11 @@ export default function App() {
     </div>
 
     {/* ═══ STATS BAR ═══ */}
-    <motion.div
-      variants={statsContainerVariant}
-      className="mt-10 grid grid-cols-3 gap-2 sm:mt-12 sm:gap-4"
-    >
+    {showImpactStats && (
+      <motion.div
+        variants={statsContainerVariant}
+        className="mt-10 grid grid-cols-3 gap-2 sm:mt-12 sm:gap-4"
+      >
       {[
         {
           value: "1+",
@@ -2488,7 +2495,8 @@ export default function App() {
           </div>
         </motion.div>
       ))}
-    </motion.div>
+      </motion.div>
+    )}
 
     {/* ═══ FILTER TABS ═══ */}
     <motion.div variants={filterTabsVariant} className="mt-10 flex w-full min-w-0 items-center justify-center sm:mt-14">
