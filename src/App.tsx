@@ -3,11 +3,10 @@ import { motion, useInView, useScroll, useTransform, AnimatePresence } from "fra
 import { sendForm } from "@emailjs/browser";
 import Lenis from "lenis";
 import EcommerceServices from "./EcommerceServices";
-import SmartCheckoutShowcase, { smartCheckoutCover } from "./SmartCheckoutGuardShowcase";
 import WhatsAppAgentShowcase, { whatsappAgentCover } from "./WhatsAppAgentShowcase";
-import AbandonedRecoveryShowcase, { abandonedRecoveryCover } from "./AbandonedRecoveryShowcase";
+import SmartCheckoutShowcase, { smartCheckoutCover } from "./SmartCheckoutGuardShowcase";
 
-import FinalWebVideo from "./Asset/Photos/FInal Vedio For Web.mp4";
+import WhatsAppAgentReviewVideo from "./Asset/Photos/WA AI Agent Review Vedio.mp4";
 import PCV from "./Asset/Photos/PCV.webp";
 import MobielV from "./Asset/Photos/MobielV.webp";
 import CocoahavenLogo from "./Asset/Photos/CocoahavenLogo.webp";
@@ -90,7 +89,7 @@ const projects: Project[] = [
       "Brand-Based UI Design",
       "Fake Order Detection",
       "Incomplete Order Tracking",
-      "Streamlined Checkout Process",
+      "Easy Checkout Process",
       "Product-Based Photo & Custom Note Collection",
       "Auto District & Thana Selector",
       "Facebook Pixel & Conversion API Tracking",
@@ -141,26 +140,34 @@ const projects: Project[] = [
     },
   },
   {
-    id: "p6",
+    id: "p3",
     title: "SmartCheckout Guard",
-    slug: "smartcheckout-guard",
+    slug: "smart-checkout-guard",
     summary:
-      "A WooCommerce plugin I built to make store management easier for clients, bringing checkout protection, order recovery, courier tools and tracking into one place.",
+      "A WooCommerce plugin built to make store management easier for clients, bringing checkout protection, order recovery, courier tools and Meta tracking together.",
     description:
-      "I created SmartCheckout Guard to help clients manage their WooCommerce stores more easily. It brings multiple store-management features together in one plugin and dashboard.",
+      "SmartCheckout Guard brings practical WooCommerce tools into one plugin: block fake COD orders, recover incomplete checkouts, manage orders and courier bookings, and keep Meta tracking events consistent. The feature explorer below shows how each module works.",
     tags: ["WordPress", "WooCommerce", "PHP"],
     cover: smartCheckoutCover,
     gallery: [],
-    role: "Plugin Developer",
+    role: "WordPress Plugin Developer",
     stack: ["WordPress", "WooCommerce", "PHP"],
     year: 2026,
     highlights: [
-      "Checkout protection and fake-order blocking",
-      "Incomplete-order recovery",
-      "Courier tools and order management",
-      "Meta Pixel and Conversions API tracking",
+      "Seven modules in one plugin",
+      "Fake order blocking and incomplete order recovery",
+      "Order management and one-click courier tools",
+      "Meta Pixel and Conversion API tracking",
+    ],
+    features: [
+      "Fake order blocking by phone, IP, email and device fingerprint",
+      "Incomplete checkout recovery with WhatsApp, email and SMS follow-up",
+      "Order management, invoice printing and courier booking",
+      "Meta Pixel and Conversion API event tracking",
+      "Bangla and English dashboard",
     ],
     type: "website",
+    visible: true,
     category: "WordPress Plugin / WooCommerce",
     status: "Completed",
     review: {
@@ -168,40 +175,6 @@ const projects: Project[] = [
       clientRole: "Plugin Developer",
       rating: 5,
       text: "",
-    },
-  },
-  {
-    id: "p3",
-    title: "RAG Knowledge Agent",
-    slug: "rag-agent",
-    summary:
-      "An intelligent AI agent powered by Retrieval-Augmented Generation (RAG) that answers questions from custom knowledge bases with high accuracy.",
-    description:
-      "Built a production-ready RAG (Retrieval-Augmented Generation) AI agent that connects to custom knowledge bases — PDFs, documents, websites, and databases — to provide accurate, context-aware answers. The system uses vector embeddings for semantic search, ensuring relevant information retrieval. Integrated with n8n for workflow automation, the agent handles customer queries, internal documentation lookup, and knowledge management with minimal human intervention.",
-    tags: ["n8n", "OpenAI", "Vector DB", "LangChain"],
-    cover: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format",
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1600&auto=format",
-    ],
-    role: "AI Automation Architect",
-    stack: ["n8n", "OpenAI API", "Pinecone", "Supabase", "Node.js", "Docker"],
-    year: 2025,
-    highlights: [
-      "95%+ answer accuracy from custom docs",
-      "Semantic search with vector embeddings",
-      "Auto-sync with knowledge base updates",
-      "Multi-format support: PDF, Web, DB",
-    ],
-    type: "website",
-    visible: false,
-    category: "AI Agent / RAG System",
-    status: "Completed",
-    review: {
-      clientName: "Tech Solutions Ltd",
-      clientRole: "SaaS Company",
-      rating: 5,
-      text: "The RAG agent transformed our customer support. Response accuracy improved dramatically and our team saves hours every day. The n8n integration makes everything seamless. Highly recommended for any business with complex documentation!",
     },
   },
   {
@@ -231,37 +204,6 @@ const projects: Project[] = [
     review: {
       clientName: "Any Business",
       clientRole: "Custom-built per business",
-      rating: 5,
-      text: "",
-    },
-  },
-  {
-    id: "p5",
-    title: "Abandoned Checkout Auto-Recovery",
-    slug: "abandoned-checkout-recovery",
-    summary:
-      "An automatic recovery system for WooCommerce that saves incomplete checkouts and sends timed SMS messages to bring customers back.",
-    description:
-      "A custom WooCommerce automation that captures a customer's details while they fill the checkout form. If they leave without ordering, it automatically sends a reminder SMS after a set time and an optional discount SMS later, re-checks before every send, never messages the same customer twice, and stops as soon as the order is placed. The owner controls the gateway, timing and message templates from the dashboard.",
-    tags: ["WordPress", "WooCommerce", "PHP", "SMS Gateway API"],
-    cover: abandonedRecoveryCover,
-    gallery: [],
-    role: "Plugin Developer",
-    stack: ["WordPress", "WooCommerce", "PHP", "WP-Cron", "SMS Gateway API"],
-    year: 2026,
-    highlights: [
-      "Automatic reminder and discount SMS",
-      "Stops once the order is placed",
-      "Works with any SMS gateway",
-      "Telegram alert for repeat abandoners",
-    ],
-    type: "automation",
-    visible: true,
-    category: "WooCommerce Automation",
-    status: "Completed",
-    review: {
-      clientName: "WooCommerce Stores",
-      clientRole: "Built for online shops",
       rating: 5,
       text: "",
     },
@@ -459,6 +401,7 @@ const navItems = [
   { id: "work", labelEn: "My Work", labelBn: "আমার কাজ" },
   { id: "about", labelEn: "About", labelBn: "আমার সম্পর্কে" },
   { id: "contact", labelEn: "Contact", labelBn: "যোগাযোগ" },
+  { id: "blog", labelEn: "Blog", labelBn: "ব্লগ" },
 ];
 
 function ServiceIcon({ name }: { name: string }) {
@@ -1304,6 +1247,7 @@ export default function App() {
               <div className="mx-auto max-w-[1200px] px-4 py-3">
                 <div className="grid grid-cols-2 gap-2">
                   {navItems.map(item => (
+
                     <a
                       key={item.id}
                       href={`#${item.id}`}
@@ -1656,19 +1600,17 @@ export default function App() {
             </div>
           </div>
           {serviceTab === "wordpress" ? (
-            <>
-              <EcommerceServices
-                lang={lang}
-                proofLogo={CocoahavenLogo}
-                proofHref="https://cocoahavenbd.com/"
-                onSelectOther={(id) => {
-                  const modalData =
-                    wordpressServiceModalData[id as keyof typeof wordpressServiceModalData] ||
-                    customCodingServiceModalData[id as keyof typeof customCodingServiceModalData];
-                  if (modalData) setSelectedServiceModal(modalData);
-                }}
-              />
-            </>
+            <EcommerceServices
+              lang={lang}
+              proofLogo={CocoahavenLogo}
+              proofHref="https://cocoahavenbd.com/"
+              onSelectOther={(id) => {
+                const modalData =
+                  wordpressServiceModalData[id as keyof typeof wordpressServiceModalData] ||
+                  customCodingServiceModalData[id as keyof typeof customCodingServiceModalData];
+                if (modalData) setSelectedServiceModal(modalData);
+              }}
+            />
           ) : (
             <>
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -4646,7 +4588,7 @@ export default function App() {
             </div>
 
             {/* Core Features */}
-            {selected.slug !== "smartcheckout-guard" && selected.features && selected.features.length > 0 && (
+            {selected.features && selected.features.length > 0 && (
               <div>
                 <h4 className="font-serif text-base font-semibold text-zinc-900 dark:text-white">
                   {lang === "bn" ? "মূল বৈশিষ্ট্য" : "Core Features"}
@@ -4756,16 +4698,11 @@ export default function App() {
           </div>
         </div>
 
-        {selected.slug === "smartcheckout-guard" && (
-          <SmartCheckoutShowcase lang={lang} />
-        )}
-
         {selected.slug === "whatsapp-ai-agent" && (
-          <WhatsAppAgentShowcase lang={lang} videoSrc={FinalWebVideo} />
+          <WhatsAppAgentShowcase lang={lang} videoSrc={WhatsAppAgentReviewVideo} />
         )}
-
-        {selected.slug === "abandoned-checkout-recovery" && (
-          <AbandonedRecoveryShowcase lang={lang} />
+        {selected.slug === "smart-checkout-guard" && (
+          <SmartCheckoutShowcase lang={lang} />
         )}
 
         {/* ── Gallery ── */}

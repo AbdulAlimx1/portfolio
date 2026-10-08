@@ -209,6 +209,25 @@ export default function WhatsAppAgentShowcase({ lang, youtubeId, videoSrc, video
 
   return (
     <section className="border-t border-white/10 px-5 py-8 sm:px-6">
+      <div className="mx-auto mb-8 max-w-3xl rounded-2xl border border-emerald-400/30 bg-emerald-500/[0.08] p-5 text-center">
+        <p className="text-[14px] leading-6 text-slate-200">
+          {pick(
+            lang,
+            "এজেন্টটি কীভাবে কাজ করে সরাসরি পরীক্ষা করতে WhatsApp-এ এই নম্বরে চ্যাট করুন:",
+            "Test how the agent works by chatting with it on WhatsApp:"
+          )}
+        </p>
+        <p className="mt-1 font-semibold text-white">+880 1647-605769</p>
+        <a
+          href="https://wa.me/8801647605769"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-3 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300"
+        >
+          {pick(lang, "WhatsApp-এ চ্যাট করে টেস্ট করুন", "Test it on WhatsApp")}
+        </a>
+      </div>
+
       {/* Header */}
       <motion.div {...fade()} className="mx-auto max-w-3xl text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-300">
