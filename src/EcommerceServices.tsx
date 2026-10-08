@@ -100,7 +100,7 @@ const features: Feature[] = [
   {
     emoji: "📍",
     bn: "সহজ চেকআউট",
-    en: "Easy Checkout",
+    en: "Streamlined Checkout",
     line: "from-transparent via-emerald-400 to-transparent",
     tile: "border-emerald-400/30 bg-emerald-500/10",
     surface: "from-emerald-950/65 via-slate-900/90 to-slate-950/85",

@@ -3,7 +3,7 @@ import { motion, useInView, useScroll, useTransform, AnimatePresence } from "fra
 import { sendForm } from "@emailjs/browser";
 import Lenis from "lenis";
 import EcommerceServices from "./EcommerceServices";
-import SmartCheckoutGuardShowcase, { smartCheckoutCover } from "./SmartCheckoutGuardShowcase";
+import SmartCheckoutShowcase, { smartCheckoutCover } from "./SmartCheckoutGuardShowcase";
 import WhatsAppAgentShowcase, { whatsappAgentCover } from "./WhatsAppAgentShowcase";
 import AbandonedRecoveryShowcase, { abandonedRecoveryCover } from "./AbandonedRecoveryShowcase";
 
@@ -90,7 +90,7 @@ const projects: Project[] = [
       "Brand-Based UI Design",
       "Fake Order Detection",
       "Incomplete Order Tracking",
-      "Easy Checkout Process",
+      "Streamlined Checkout Process",
       "Product-Based Photo & Custom Note Collection",
       "Auto District & Thana Selector",
       "Facebook Pixel & Conversion API Tracking",
@@ -4646,7 +4646,7 @@ export default function App() {
             </div>
 
             {/* Core Features */}
-            {selected.features && selected.features.length > 0 && (
+            {selected.slug !== "smartcheckout-guard" && selected.features && selected.features.length > 0 && (
               <div>
                 <h4 className="font-serif text-base font-semibold text-zinc-900 dark:text-white">
                   {lang === "bn" ? "মূল বৈশিষ্ট্য" : "Core Features"}
@@ -4757,7 +4757,7 @@ export default function App() {
         </div>
 
         {selected.slug === "smartcheckout-guard" && (
-          <SmartCheckoutGuardShowcase lang={lang} />
+          <SmartCheckoutShowcase lang={lang} />
         )}
 
         {selected.slug === "whatsapp-ai-agent" && (
